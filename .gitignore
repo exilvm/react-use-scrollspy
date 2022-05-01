@@ -33,3 +33,4 @@ npm-debug.log
 
 # Build
 lib/
+example/bin

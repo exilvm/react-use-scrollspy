@@ -39,38 +39,22 @@ const activeSection = useScrollSpy({
 
 Use React `refs` for section elements like in the [provided example](/example).
 
-```javascript
-import React, { useRef } from 'react';
-import useScrollSpy from 'react-use-scrollspy';
-
-const App = () => {
-
-  const sectionRefs = [
-    useRef(null),
-    useRef(null),
-    useRef(null),
-  ];
-
-  const activeSection = useScrollSpy({
-    sectionElementRefs: sectionRefs,
-    offsetPx: -80,
-  });
-
-  return (
-    <nav className="App-navigation">
-      <span className={activeSection === 0 ? "App-navigation-item App-navigation-item--active" : "App-navigation-item"}>Section 1</span>
-      <span className={activeSection === 1 ? "App-navigation-item App-navigation-item--active" : "App-navigation-item"}>Section 2</span>
-      <span className={activeSection === 2 ? "App-navigation-item App-navigation-item--active" : "App-navigation-item"}>Section 3</span>
-    </nav>
-
-    <section className="App-section" ref={sectionRefs[0]}>
-      <h1>Section 1</h1>
-    </section>
-    <section className="App-section" ref={sectionRefs[1]}>
-      <h1>Section 2</h1>
-    </section>
-    <section className="App-section" ref={sectionRefs[2]}>
-      <h1>Section 3</h1>
-    </section>
-  )
+## Fire up the demo and develop
+Install dependencies and build a tgz file for the demo to use as a local package:
 ```
+npm i && npm run build && npm pack
+```
+Move the package file to the `bin` directory:
+```
+mkdir -p ./example/bin && mv *.tgz ./example/bin
+```
+install the demo dependencies:
+```
+cd example && npm i
+```
+Start the demo:
+```
+npm start
+```
+
+
